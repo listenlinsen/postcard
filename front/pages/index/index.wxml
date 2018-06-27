@@ -1,0 +1,13 @@
+<view class="container">
+    <view class="table">
+
+        <view class="tr">
+            <!--<view class="th">欢迎:{{item.nickname}}</view>-->
+            <view class="th"><open-data type="userNickName"></open-data></view>
+
+        </view>
+    </view>
+    <view>
+      <button type="primary" bindtap="myTab">生成名片</button>
+    </view>
+</view>
