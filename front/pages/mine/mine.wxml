@@ -1,8 +1,20 @@
 <view class="page">
     <view class="page__bd page__bd_spacing">
         <view class="weui-flex">
-            <view class="weui-flex__item"><view class="placeholder">weui</view></view>
-            <view class="weui-flex__item"><view class="placeholder">weui</view></view>
+            <view class="weui-flex__item">
+                <view class="placeholder">
+                    <view class="button-sp-area">
+                        <button class="weui-btn" type="primary" plain="true">查看我的名片</button>
+                    </view>
+                </view>
+            </view>
+            <view class="weui-flex__item">
+                <view class="placeholder">
+                    <view class="button-sp-area">
+                        <button class="weui-btn" type="primary" plain="true">新建名片</button>
+                    </view>
+                </view>
+            </view>
         </view>
     </view>
 </view>

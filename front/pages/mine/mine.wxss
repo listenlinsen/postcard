@@ -1,5 +1,5 @@
 /* pages/mine/mine.wxss */
-@import"../../weui.wxss";
+@import 'weui.wxss';
 
 .profile{
     width: 200rpx;

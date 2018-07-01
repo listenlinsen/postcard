@@ -85,10 +85,16 @@ function userEnterApp(){
     })
 }
 
+//去除字符串两端的空格
+function trim(str){
+    return str.replace(/(^\s*)|(\s*$)/g, "");
+}
+
 module.exports = {
-  postData : postData,
-  getData : getData,
-  getUserInfo : getUserInfo,
-  checkMail : checkMail,
-  userEnterApp :userEnterApp
+    postData : postData,
+    getData : getData,
+    getUserInfo : getUserInfo,
+    checkMail : checkMail,
+    userEnterApp :userEnterApp,
+    trim : trim
 };

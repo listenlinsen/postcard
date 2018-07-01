@@ -59,17 +59,7 @@ Page({
   //创建名片方法
   newPostcard : function (result) {
       var that = this;
-      if(common.checkMail(result.detail.value.email)){
-          var newPostcardData = {
-              true_name : result.detail.value.true_name,
-              phone : parseInt(result.detail.value.phone),
-              position : result.detail.value.position,
-              company: result.detail.value.company,
-              email: result.detail.value.email,
-              address: result.detail.value.address,
-              openid : wx.getStorageSync('openid')
-          };
-      } else {
+      if(!common.checkMail(result.detail.value.email)){
           wx.showToast({
               title : '邮箱的格式有误，请重新输入',
               icon : 'none'
@@ -77,6 +67,23 @@ Page({
           return;
       }
 
+      if(result.detail.value.true_name == null || result.detail.value.true_name == ''){
+          wx.showToast({
+              title : '请输入您的姓名',
+              icon : 'none'
+          });
+          return;
+      }
+
+      var newPostcardData = {
+          true_name : common.trim(result.detail.value.true_name),
+          phone : parseInt(result.detail.value.phone),
+          position : common.trim(result.detail.value.position),
+          company: common.trim(result.detail.value.company),
+          email: common.trim(result.detail.value.email),
+          address: common.trim(result.detail.value.address),
+          openid : wx.getStorageSync('openid')
+      };
 
       //判断是否有头像和是否用微信头像作为名片头像
       if(!useWechatImg && !noHeadImg){

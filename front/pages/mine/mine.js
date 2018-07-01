@@ -62,5 +62,12 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+
+  //点击“查看我的名片”按钮事件
+  showMyAllPostcard : function (){
+      wx.navigateTo({
+        url: '../myCardList/myCardList',
+      })
   }
 })

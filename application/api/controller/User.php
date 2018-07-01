@@ -15,6 +15,7 @@ use think\Request;
 
 class User extends Controller
 {
+    //新建用户接口
     public function newUser(){
         $userMessage = Request::instance()->param();
         $user = new Users;
@@ -24,9 +25,11 @@ class User extends Controller
         return $isSuccess;
     }
 
+    //查看用户是否已存在接口
     public function checkUserExist(){
         $userMessage = Request::instance()->param();
         $user = Users::get(['openid' => $userMessage['openid']]);
+//        print_r($user);die;
         if(!empty($user)){
             return 1;
         } else {
