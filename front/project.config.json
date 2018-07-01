@@ -36,9 +36,9 @@
 			"current": 1,
 			"list": [
 				{
-					"id": -1,
-					"name": "my",
-					"pathName": "pages/my/my",
+					"id": 0,
+					"name": "newCard",
+					"pathName": "pages/newCard/newCard",
 					"query": ""
 				},
 				{
@@ -47,6 +47,12 @@
 					"pathName": "pages/index/index",
 					"query": "",
 					"scene": "1001"
+				},
+				{
+					"id": 2,
+					"name": "showcard",
+					"pathName": "pages/showCard/showCard",
+					"query": "id=1"
 				}
 			]
 		}

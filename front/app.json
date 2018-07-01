@@ -2,7 +2,10 @@
   "pages":[
     "pages/index/index",
     "pages/logs/logs",
-    "pages/my/my"
+    "pages/newCard/newCard",
+    "pages/myCardList/myCardList",
+    "pages/showCard/showCard",
+    "pages/mine/mine"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -18,7 +21,7 @@
       "selectedIconPath": "images/my.png"
     },
     {
-      "pagePath": "pages/my/my",
+      "pagePath": "pages/mine/mine",
       "text": "我的",
       "iconPath": "images/my.png",
       "selectedIconPath": "images/my.png"

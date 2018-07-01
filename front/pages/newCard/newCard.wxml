@@ -4,7 +4,6 @@
 
     <view>
          <image class="profile" mode="aspectFit" bindtap="howToGetImg" src="{{imgSrc}}"></image>
-        <!--<button type='primary' bindtap="howToGetImg">选择名片图片</button>-->
     </view>
 
     <view class="section">
@@ -19,7 +18,7 @@
 
     <view class="section">
         <view class="section__title">电话号码</view>
-        <input name="phone"/>
+        <input name="phone" type="number"/>
     </view>
 
     <view class="section">

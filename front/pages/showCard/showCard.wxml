@@ -1,0 +1,58 @@
+<view>
+    <image class="profile" mode="aspectFit" src="{{image_url}}"></image>
+</view>
+<view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+        <view class="weui-cell__hd">
+            <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+        </view>
+        <view class="weui-cell__bd">姓名</view>
+        <view class="weui-cell__ft">{{true_name}}</view>
+    </view>
+    <view class="weui-cell">
+        <view class="weui-cell__hd">
+            <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+        </view>
+        <view class="weui-cell__bd">联系方式</view>
+        <view class="weui-cell__ft">{{phone}}</view>
+    </view>
+    <view class="weui-cell">
+        <view class="weui-cell__hd">
+            <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+        </view>
+        <view class="weui-cell__bd">职位</view>
+        <view class="weui-cell__ft">{{position}}</view>
+    </view>
+    <view class="weui-cell">
+        <view class="weui-cell__hd">
+            <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+        </view>
+        <view class="weui-cell__bd">公司</view>
+        <view class="weui-cell__ft">{{company}}</view>
+    </view>
+    <view class="weui-cell">
+        <view class="weui-cell__hd">
+            <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+        </view>
+        <view class="weui-cell__bd">邮箱</view>
+        <view class="weui-cell__ft">{{email}}</view>
+    </view>
+    <view class="weui-cell">
+        <view class="weui-cell__hd">
+            <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+        </view>
+        <view class="weui-cell__bd">地址</view>
+        <view class="weui-cell__ft">{{address}}</view>
+    </view>
+</view>
+
+<view class="page">
+    <view class="page__bd page__bd_spacing">
+        <view class="button-sp-area">
+            <button class="weui-btn" type="primary" plain="true">分享名片</button>
+        </view>
+        <view class="button-sp-area">
+            <button class="weui-btn" type="primary" plain="true" bindtap="saveIntoPhone">存入通讯录</button>
+        </view>
+    </view>
+</view>

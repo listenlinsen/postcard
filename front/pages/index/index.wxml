@@ -1,13 +1,37 @@
-<view class="container">
-    <view class="table">
+<view class="search-container">
+    <input type="text" bindinput="searchInputEvent" placeholder="输入姓名搜索"></input><icon bindtap="searchClickEvent"  type="search" size="20"/>
+</view>
 
-        <view class="tr">
-            <!--<view class="th">欢迎:{{item.nickname}}</view>-->
-            <view class="th"><open-data type="userNickName"></open-data></view>
 
-        </view>
+<scroll-view scroll-y="true" style="height:{{scrollHeight}}px"
+             bindscrolltolower="scrollLowerEvent">
+
+    <view class="logo" wx:if="{{!loadingMore && totalRecord == 0 && !isInit}}">
+        <icon type="cancel" color="#B0AAAA" size="50" />
+        <view><text>没有找到相关名片</text></view>
     </view>
-    <view>
-      <button type="primary" bindtap="myTab">生成名片</button>
+
+    <view class="common-list" wx:if="{{totalRecord > 0}}">
+
+        <block wx:for="" wx:key="">
+            <view class="list-item" data-bid="" bindtap="">
+                <view class="index-list-item">
+                    <view class="cover">
+                        <image class="cover-img" src=""></image>
+                    </view>
+                    <view class="content">
+                        <view class="title"></view>
+                        <text class="desc">
+                            <block wx:for="{{item.author}}" wx:for-item="it" wx:key="*this"></block>
+                        </text>
+                    </view>
+                </view>
+            </view>
+        </block>
+
     </view>
+
+</scroll-view>
+<view>
+  <button type="primary" bindtap="myTab">生成名片</button>
 </view>

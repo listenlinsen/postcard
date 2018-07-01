@@ -1,0 +1,10 @@
+/* pages/mine/mine.wxss */
+@import"../../weui.wxss";
+
+.profile{
+    width: 200rpx;
+    height: 200rpx;
+    border: #E8E5E5;
+    border-radius: 200rpx;
+    background-color: #E8E5E5;
+}

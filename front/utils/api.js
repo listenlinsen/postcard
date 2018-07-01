@@ -1,4 +1,4 @@
-const common = require('common.js');
+var common = require('common.js');
 const appid = 'wx47fa6f98685cfede';
 const secret = '3bf2d6f9370ba23fa35fbdea41dc631e';
 
@@ -36,8 +36,39 @@ function checkUserExist(data,callback){
     })
 }
 
+//新建名片
 function newPostcard(data,callback){
     common.postData('http://localhost/postcard/public/index.php/api/postcard/newCard',data,function(result){
+        callback && callback(result);
+    })
+}
+
+//头像上传
+function UploadHeadImg(source,callback){
+    wx.uploadFile({
+        url: 'http://localhost/postcard/public/index.php/api/upload/upload',
+        filePath: source,
+        name: 'userImg',
+        header: {
+            "Content-Type": "multipart/form-data",
+            'accept': 'application/json',
+        },
+        success: function (res) {
+            callback && callback(res);
+        }
+    })
+}
+
+//获取我的名片信息
+function getPostcard(postcardId,callback){
+    common.getData('http://localhost/postcard/public/index.php/api/postcard/getPostcard',postcardId,function(result){
+        callback && callback(result);
+    })
+}
+
+//获取我的名片列表
+function getMyPostcardList(userId,callback){
+    common.getData('http://localhost/postcard/public/index.php/api/postcard/getMyPostcardList',userId,function(result){
         callback && callback(result);
     })
 }
@@ -46,5 +77,8 @@ module.exports = {
     getOpenId : getOpenId,
     newUser : newUser,
     checkUserExist : checkUserExist,
-    newPostcard : newPostcard
+    newPostcard : newPostcard,
+    UploadHeadImg : UploadHeadImg,
+    getPostcard : getPostcard,
+    getMyPostcardList  : getMyPostcardList
 };

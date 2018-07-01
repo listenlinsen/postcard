@@ -31,7 +31,13 @@ class Postcard extends Controller
             'address' => $cardData['address'],
             'image_url' => $cardData['image_url']
         ]);
-        $isSuccess = $postcard->save();
-        echo $isSuccess;
+        $postcard->save();
+        return $postcard->id;
+    }
+
+
+    public function getPostcard(){
+        $cardId = Request::instance()->param()['id'];
+        return Card::get($cardId);
     }
 }
