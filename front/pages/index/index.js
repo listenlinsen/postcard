@@ -42,6 +42,19 @@ Page({
       wx.navigateTo({
           url : '../showCard/showCard?id='+cardid
       });
+  },
+
+  searchInputEvent : function(e) {
+      var that = this;
+      that.setData({
+          searchText: e.detail.value
+      });
+      var user_id = wx.getStorageSync('user_id');
+      api.searchPostcard({true_name: e.detail.value,user_id : user_id}, function (result) {
+          that.setData({
+              indexCardList : result.data
+          });
+      });
   }
 
 });

@@ -57,4 +57,16 @@ class Postcard extends Controller
         }
         return null;
     }
+
+    //按照真实姓名搜索名片
+    public function searchPostcard(){
+        $param = Request::instance()->param();
+        $true_name = $param['true_name'];
+        $user_id = $param['user_id'];
+        $cardIdList = Card::searchCardByName($user_id,$true_name);
+        if(!empty($cardIdList)){
+            return json_encode($cardIdList);
+        }
+        return null;
+    }
 }
