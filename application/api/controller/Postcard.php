@@ -17,6 +17,7 @@ use think\Request;
 
 class Postcard extends Controller
 {
+    //创建名片
     public function newCard(){
         $cardData = Request::instance()->param();
         //获取固定openid用户的user_id
@@ -35,9 +36,25 @@ class Postcard extends Controller
         return $postcard->id;
     }
 
-
+    //获取名片信息
     public function getPostcard(){
         $cardId = Request::instance()->param()['id'];
         return Card::get($cardId);
+    }
+
+    //获取我的名片列表
+    public function getMyPostcardList(){
+        $user_id = Request::instance()->param()['user_id'];
+        return json_encode(Card::all(['user_id' => $user_id]));
+    }
+
+    //获取与我关联的名片列表
+    public function getMyCollectPostcardList(){
+        $user_id = Request::instance()->param()['user_id'];
+        $cardIdList = Card::getCollectCardList($user_id);
+        if(!empty($cardIdList)){
+            return json_encode($cardIdList);
+        }
+        return null;
     }
 }

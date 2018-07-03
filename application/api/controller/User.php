@@ -22,16 +22,20 @@ class User extends Controller
         $user->openid = $userMessage['openid'];
         $user->wx_nickname = $userMessage['wx_nickname'];
         $isSuccess = $user->save();
-        return $isSuccess;
+        if($isSuccess == 1){
+            return Users::get(['openid' => $userMessage['openid']])->user_id;
+        } else {
+            return $isSuccess;
+        }
+
     }
 
     //查看用户是否已存在接口
     public function checkUserExist(){
         $userMessage = Request::instance()->param();
         $user = Users::get(['openid' => $userMessage['openid']]);
-//        print_r($user);die;
         if(!empty($user)){
-            return 1;
+            return $user->user_id;
         } else {
             return 0;
         }

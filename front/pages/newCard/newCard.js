@@ -107,7 +107,7 @@ Page({
           api.newPostcard(newPostcardData,function(returnId){
                 console.log('创建名片成功');
               //跳转至我的名片展示页
-              wx.navigateTo({
+              wx.redirectTo ({
                   url: '../showCard/showCard?id='+returnId.data
               })
           })

@@ -1,4 +1,7 @@
 // pages/myCardList/myCardList.js
+const api = require('../../utils/api.js');
+const common = require('../../utils/common.js');
+
 Page({
 
   /**
@@ -12,7 +15,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that = this;
+    var user_id = options.user_id;
+    api.getMyPostcardList({user_id : options.user_id},function(result){
+      if(result.data.length != 'undefined' && result.data.length > 0) {
+          that.setData({postcardData: result.data, postcardLength: result.data.length});
+      }
+    })
   },
 
   /**
@@ -62,5 +71,12 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+
+  showCardPage : function(e){
+    var cardid = e.currentTarget.dataset.cardid;
+      wx.navigateTo({
+         url : '../showCard/showCard?id='+cardid
+      });
   }
 })

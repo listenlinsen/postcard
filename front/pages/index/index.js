@@ -23,8 +23,26 @@ Page({
     },
 
   onLoad: function () {
+      var that = this;
       common.userEnterApp();
+      var user_id = wx.getStorageSync('user_id');
+      api.getMyCollectPostcardList({user_id : user_id},function(result){
+          that.setData({
+             indexCardList : result.data
+          });
+      })
   },
+
+  onGotUserInfo : function(res){
+      console.log(res);
+  },
+
+  showCardPage : function(e){
+      var cardid = e.currentTarget.dataset.cardid;
+      wx.navigateTo({
+          url : '../showCard/showCard?id='+cardid
+      });
+  }
 
 });
 

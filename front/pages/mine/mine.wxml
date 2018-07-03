@@ -4,14 +4,14 @@
             <view class="weui-flex__item">
                 <view class="placeholder">
                     <view class="button-sp-area">
-                        <button class="weui-btn" type="primary" plain="true">查看我的名片</button>
+                        <button class="weui-btn" type="primary" plain="true" bindtap='showMyAllPostcard'>查看我的名片</button>
                     </view>
                 </view>
             </view>
             <view class="weui-flex__item">
                 <view class="placeholder">
                     <view class="button-sp-area">
-                        <button class="weui-btn" type="primary" plain="true">新建名片</button>
+                        <button class="weui-btn" type="primary" plain="true" bindtap="newMyPostcard">新建名片</button>
                     </view>
                 </view>
             </view>

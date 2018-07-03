@@ -67,7 +67,13 @@ Page({
   //点击“查看我的名片”按钮事件
   showMyAllPostcard : function (){
       wx.navigateTo({
-        url: '../myCardList/myCardList',
+        url: '../myCardList/myCardList?user_id='+wx.getStorageSync('user_id'),
       })
+  },
+
+  newMyPostcard : function (){
+    wx.navigateTo({
+        url : '../newCard/newCard'
+    });
   }
-})
+});

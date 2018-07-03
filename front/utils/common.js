@@ -74,12 +74,16 @@ function userEnterApp(){
                         openid : result.data.openid,
                         wx_nickname : wxMessage.userInfo.nickName
                     };
-                    api.newUser(newUserData,function(){
+                    api.newUser(newUserData,function(user_id){
                         //在此进行新得到的名片的关联操作
+                        //返回的result包含新创建用户的user_id，将其存入缓存中以便后续使用
+                        wx.setStorageSync('user_id', user_id.data);
                     });
                 });
-            } else if(isExist.data == 1){
-                console.log('用户已存在');
+            } else {
+              //如果用户已存在，isExist将返回user_id
+              wx.setStorageSync('user_id', isExist.data);
+
             }
         })
     })

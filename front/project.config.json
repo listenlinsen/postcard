@@ -53,6 +53,12 @@
 					"name": "showcard",
 					"pathName": "pages/showCard/showCard",
 					"query": "id=1"
+				},
+				{
+					"id": 3,
+					"name": "showcardList",
+					"pathName": "pages/myCardList/myCardList",
+					"query": "user_id=1"
 				}
 			]
 		}

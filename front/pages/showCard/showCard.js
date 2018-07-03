@@ -31,6 +31,7 @@ Page({
               address : result.data.address
           })
       })
+
   },
 
   /**
@@ -76,10 +77,18 @@ Page({
   },
 
   /**
-   * 用户点击右上角分享
+   * 用户点击分享(不一定是右上角的转发按钮)
    */
-  onShareAppMessage: function () {
-  
+  onShareAppMessage: function (res) {
+      var that = this;
+       if(res.from == 'button'){
+           console.log(res.target);
+       }
+
+       return {
+           title : '来自'+that.data.true_name+'的名片',
+           path : '/pages/showCard/showCard?id='+that.data.postcardId
+       }
   },
 
   saveIntoPhone : function(){
@@ -99,6 +108,6 @@ Page({
             }
           }
       })
-  }
+  },
 
 });
